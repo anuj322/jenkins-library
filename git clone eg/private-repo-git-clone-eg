@@ -1,0 +1,17 @@
+@Library('git-lib') _
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Private Repo') {
+            steps {
+                gitCheckout(
+                    'https://github.com/anujpal/private-repo.git',
+                    'main',
+                    'github-creds'
+                )
+            }
+        }
+    }
+}
