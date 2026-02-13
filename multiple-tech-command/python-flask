@@ -1,0 +1,14 @@
+🔵 9️⃣ Python (Flask)
+✅ Install
+pip install -r requirements.txt
+
+✅ Test (pytest)
+pytest
+
+✅ Run
+python app.py
+
+
+Production:
+
+gunicorn app:app

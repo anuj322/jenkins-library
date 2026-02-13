@@ -1,0 +1,17 @@
+🟢 8️⃣ Python (Django)
+✅ Install Dependencies
+pip install -r requirements.txt
+
+✅ Migrate DB
+python manage.py migrate
+
+✅ Run Tests
+python manage.py test
+
+✅ Run Server
+python manage.py runserver
+
+
+Production (Gunicorn):
+
+gunicorn projectname.wsgi
