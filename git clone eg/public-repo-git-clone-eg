@@ -1,27 +1,18 @@
-def call(String repoUrl, String branch, String credId = null) {
-
-    if (credId == null) {
-
-        // PUBLIC REPO
-        sh """
-            git clone -b ${branch} ${repoUrl}
-        """
-
-    } else {
-
-        // PRIVATE REPO
-        withCredentials([usernamePassword(
-            credentialsId: credId,
-            usernameVariable: 'GIT_USER',
-            passwordVariable: 'GIT_PASS'
-        )]) {
-
-            sh """
-                git clone -b ${branch} https://${GIT_USER}:${GIT_PASS}@${repoUrl.replace('https://', '')}
-            """
+@Library('my-lib') _
+pipeline {
+    agent any
+    
+    environment {
+        repo_link = "https://github.com/HuXn-WebDev/MERN-Movies-App.git"
+        branch = "main"
+    }
+    stages {
+        stage("git clone"){
+            steps {
+                script {
+                    gitClone(repo_link, branch)
+                }
+            }
         }
     }
-
-    echo "Repo cloned: ${repoUrl}"
-    echo "Branch: ${branch}"
 }
