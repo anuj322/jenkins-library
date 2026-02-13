@@ -1,0 +1,25 @@
+⚫ 2️⃣ Next.js
+
+Install
+
+npm install
+
+
+Test
+
+npm test
+
+
+Build
+
+npm run build
+
+
+Start Production
+
+npm start
+
+
+Dev Mode
+
+npm run dev

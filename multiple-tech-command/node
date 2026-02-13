@@ -1,0 +1,20 @@
+✅ Backend (Node + Express)
+
+Install
+
+npm install
+
+
+Test
+
+npm test
+
+
+Run
+
+node server.js
+
+
+or production:
+
+pm2 start server.js

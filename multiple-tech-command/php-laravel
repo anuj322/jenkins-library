@@ -1,0 +1,18 @@
+🟠 6️⃣ PHP (Laravel)
+✅ Install Dependencies
+composer install
+
+✅ Generate Key
+php artisan key:generate
+
+✅ Run Tests
+php artisan test
+
+✅ Run Server
+php artisan serve
+
+
+Production:
+
+php artisan config:cache
+php artisan route:cache

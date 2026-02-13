@@ -1,0 +1,12 @@
+🔵 4️⃣ Java (Maven)
+✅ Install Dependencies
+mvn clean install
+
+✅ Run Tests
+mvn test
+
+✅ Build JAR
+mvn package
+
+✅ Run
+java -jar target/app.jar

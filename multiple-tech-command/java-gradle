@@ -1,0 +1,14 @@
+🟣 5️⃣ Java (Gradle)
+✅ Install & Build
+gradle build
+
+✅ Test
+gradle test
+
+✅ Run
+gradle bootRun
+
+
+or
+
+java -jar build/libs/app.jar

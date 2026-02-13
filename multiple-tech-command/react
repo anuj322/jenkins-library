@@ -1,0 +1,20 @@
+✅ Frontend (React)
+
+Install
+
+npm install
+
+
+Test
+
+npm test -- --watchAll=false
+
+
+Build
+
+npm run build
+
+
+Run (dev)
+
+npm start
