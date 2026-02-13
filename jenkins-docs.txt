@@ -1,0 +1,107 @@
+freee style pipeline 
+
+
+select free style pipeline
+then select parameters if you want to edit it run time 
+then select execute a shell script and then all done
+we can run the pipeline 
+
+triggers in jenkins
+
+1 crone job or schedule a build 
+
+build trriger 
+periodic build = cron job set kr sakte h
+
+2 scm poll
+set time every time it checks if it found changes in github repo it build it 
+
+3 git webhooks
+give github repo link in this option
+enable this option 
+GitHub hook trigger for GITScm polling
+and then setup git webhook in github after that it automatically run when code is push 
+
+
+
+git clone
+
+use just need to provide link in scm and that's it you dont need to run git clone again
+
+
+workspace
+/var/lib/jenkins/
+where jenkins keep all the jobs
+
+
+
+config email notification
+manage jenkins in last you see email notification
+if you use gmail.com
+smtp server = smtp.gmail.com
+advanced
+also tick on use ssl
+username = you gmail id
+password = (first enable 2fa && after that search "app password" in gmail then create a password) 
+smtp port = 465
+
+after config the email successfully
+go to config pipeline 
+in last post build actions 
+send emable for every unsable build 
+give reciver email 
+
+
+jenkins agent
+
+setup ssh password less auth master -> agent  
+add agent as you do 
+
+
+jenkins with ansible 
+build step -> invoke ansible playbook
+install plugin ansible 
+go to build steps provide the path of ansible playbook 
+and that all
+if fail then give permission to jenkins user 
+
+
+rbac -> role based access control 
+install plugin Role-Based Strategy 
+add user in jenkins
+then go -> manage jenkins -> security -> auth -> select role based streagy 
+then go manage jenkins -> manage roles -> then create a new role then add user in list then assign the role to new user 
+
+
+env variable in jenkins
+manage jenkins -> system -> global variable -> env variable -> set name and value 
+use can use those env variable using $ENV-name
+
+maven + jenkins
+install maven integration plugin 
+install maven or add maven with version
+manage jenkins -> tools -> maven -> give name -> add version  
+
+
+
+
+
+pipeline {
+    agent any           // 1. Kahan chalega? (Server/Node)
+    
+    environment {       // 2. Variables (Optional but good)
+        APP_NAME = "my-java-api"
+    }
+
+    stages {            // 3. Kaam ki shuruat
+        stage('Build') { // 4. Step ka naam
+            steps {     // 5. Asli command
+                // Yahan Pipeline Syntax generator se code copy-paste karo
+            }
+        }
+    }
+    
+    post {              // 6. Kaam khatam hone ke baad (Optional)
+        always { echo 'Done!' }
+    }
+}
